@@ -49,6 +49,12 @@ class App extends Component {
           </Navbar.Collapse>
         </Navbar>
 
+        <Route path="/portfolio" exact render={() => 
+          <HomePage 
+            title={this.state.home.title}
+            subTitle={this.state.home.subTitle}
+            text={this.state.home.text}
+          />} />
         <Route path="/" exact render={() => 
           <HomePage 
             title={this.state.home.title}
