@@ -16,7 +16,7 @@ class Carousel extends Component {
                     title: 'Ekceer',
                     subTitle: 'A beauty and clinic app',
                     imgSrc: ekceer,
-                    link: "https://tahseens.com/",
+                    link: "https://tahseens.azurewebsites.net",
                     selected: false
                 },
                 {
