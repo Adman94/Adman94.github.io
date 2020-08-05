@@ -39,7 +39,7 @@ class App extends Component {
     return (
     <Router>
       <Container className="p-0" fluid={true}>
-        <Navbar fixed="top" className="border-bottom" bg="transparent" expand="lg">
+        <Navbar fixed="top" className="overflow-auto border-bottom" bg="light" expand="lg">
           <NavLink style={{color: 'inherit', textDecoration: 'inherit'}} className="nav-Link p-2" to="/">Adeeb Rahman</NavLink>
           <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
           <Navbar.Collapse id="navbar-toggle">
