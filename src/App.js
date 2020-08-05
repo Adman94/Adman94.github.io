@@ -29,7 +29,9 @@ class App extends Component {
         title: 'About Me'
       },
       contact: {
-        title: 'Let\'s get coffee!!'
+        title: 'Let\'s get coffee!!',
+        subTitle: 'Send me an email',
+        text: 'Let\'s connect, would love to know your feedback on the website. Have a great day...!!'
       }
     }
   }
@@ -37,7 +39,7 @@ class App extends Component {
     return (
     <Router>
       <Container className="p-0" fluid={true}>
-        <Navbar className="border-bottom" bg="transparent" expand="lg">
+        <Navbar fixed="top" className="border-bottom" bg="transparent" expand="lg">
           <NavLink style={{color: 'inherit', textDecoration: 'inherit'}} className="nav-Link p-2" to="/">Adeeb Rahman</NavLink>
           <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
           <Navbar.Collapse id="navbar-toggle">

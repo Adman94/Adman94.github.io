@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 import Content from '../components/Content';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Hero from '../components/Hero'
 import React, { Component } from 'react';
 
 export default class ContactPage extends Component {
+  constructor(props) {
+    super(props);
+  }
   state = {
     senderEmail: '',
     feedback: '',
@@ -89,50 +91,48 @@ export default class ContactPage extends Component {
   render() {
     return (
         <div>
-            <Jumbotron className="bg-transparent jumbotron-fluid">
-                <Container fluid={true}>
-                    <Row className="justify-content-center ml-5 pl-5 py-4">
-                        <Col md={10} sm={12}>
-                            <h1 className="display-1 font-weight-bolder">Your Feedback</h1>
-                        </Col>
-                    </Row>
-                </Container>
-            </Jumbotron>
-
+        <Jumbotron className="mt-5 bg-transparent jumbotron-fluid">
+          <Container fluid={true}>
+                <Hero 
+                    title={this.props.title}
+                    subTitle={this.props.subTitle}
+                    text={this.props.text}
+            />
             <Content>
-            <Form onSubmit={this.handleSubmit}>
-                <Form.Group>
-                    <Form.Label htmlFor="email">Email</Form.Label>
-                    <Form.Control id="sender" name="sender" placeholder="email@example.com" type="email" value={this.state.senderEmail} onChange={this.handleEmailChange} />
-                </Form.Group>
+              <Form onSubmit={this.handleSubmit}>
+                      <Form.Group>
+                          <Form.Label htmlFor="email">Email</Form.Label>
+                          <Form.Control id="sender" name="sender" placeholder="email@example.com" type="email" value={this.state.senderEmail} onChange={this.handleEmailChange} />
+                      </Form.Group>
 
-                <Form.Group>
-                    <Form.Label htmlFor="feedback">Feedback</Form.Label>
-                    <Form.Control id="feedback" name="feedback" placeholder="Let's catch up!" as="textarea"rows="3" value={this.state.feedback} onChange={this.handleChange} />
-                </Form.Group>
-                <div className="btn-group">
-                  <Button 
-                    className="d-inline-block" 
-                    variant="outline-danger" 
-                    onClick={this.handleCancel}>
-                  Cancel
-                  </Button>
-                </div>
-                <div className="btn-group">
-                  <Button 
-                    disabled={this.state.disabled}
-                    type="submit" 
-                    className="d-inline-block ml-5" 
-                    variant="outline-success"
-                  >
-                    Submit
-                    </Button>
-                </div>
-                  {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
-                  {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
-            </Form>
-        </Content>
-            
+                      <Form.Group>
+                          <Form.Label htmlFor="feedback">Feedback</Form.Label>
+                          <Form.Control id="feedback" name="feedback" placeholder="Let's catch up!" as="textarea"rows="3" value={this.state.feedback} onChange={this.handleChange} />
+                      </Form.Group>
+                      <div className="btn-group">
+                        <Button 
+                          className="d-inline-block" 
+                          variant="outline-danger" 
+                          onClick={this.handleCancel}>
+                        Cancel
+                        </Button>
+                      </div>
+                      <div className="btn-group">
+                        <Button 
+                          disabled={this.state.disabled}
+                          type="submit" 
+                          className="d-inline-block ml-5" 
+                          variant="outline-success"
+                        >
+                          Submit
+                          </Button>
+                      </div>
+                        {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
+                        {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
+                  </Form>         
+            </Content>
+          </Container>
+        </Jumbotron>            
         </div>
     );
   }
