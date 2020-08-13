@@ -7,11 +7,11 @@ function Footer() {
     return (
         <footer className="pt-5 mt-5">
             <Container fluid={true}>
-                <Row className="border-top justify-content-between p-4">
+                <Row className=" justify-content-between p-4">
                     {/* <Col className="px-5" md={3} sm={12}>
                     Adeeb Rahman
                     </Col> */}
-                    <Col className="px-5" md={3} sm={12}>
+                    <Col className="" md={3} sm={12}>
                         This site was made by Adeeb.
                     </Col>
                     <Col className="d-flex" md={3} sm={12}>

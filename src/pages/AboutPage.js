@@ -13,6 +13,8 @@ function AboutPage(props) {
                     subTitle={props.subTitle}
                     text={props.text}
                     />
+                </Container>
+                <Container className="about">
                     <Content>
                         <p>
                             Hello, my name is Adeeb Rahman. I'm a recent graduate and aspiring to pursue a career in full stack software engineering. I've had experience working with React, Next JS, Node JS, Express JS, MongoDB, MySQL, etc. and looking forward to learn more and more new technologies in the years to come.</p>

@@ -10,6 +10,11 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import './App.css';
 
+const navStyle = {
+  color: 'inherit', 
+  textDecoration: 'inherit',
+}
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -26,7 +31,9 @@ class App extends Component {
         text: 'Some projects I"m working on...'
       },
       about: {
-        title: 'About Me'
+        title: 'About Me',
+        subTitle: 'It\'d be great to know each other!',
+        text: 'Little bit about myself'
       },
       contact: {
         title: 'Let\'s get coffee!!',
@@ -40,23 +47,17 @@ class App extends Component {
     <Router>
       <Container className="p-0" fluid={true}>
         <Navbar fixed="top" className="overflow-auto border-bottom" bg="white" expand="lg">
-          <NavLink style={{color: 'inherit', textDecoration: 'inherit'}} className="nav-Link p-2" to="/">Adeeb Rahman</NavLink>
+          <NavLink style={navStyle} className="nav-Link p-2" to="/">Adeeb Rahman</NavLink>
           <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
           <Navbar.Collapse id="navbar-toggle">
             <Nav className="ml-auto">
-              <NavLink style={{color: 'inherit', textDecoration: 'inherit'}} className="nav-Link p-2" to="/">Home</NavLink>
-              <NavLink style={{color: 'inherit', textDecoration: 'inherit'}} className="nav-Link p-2" to="/about">About</NavLink>
-              <NavLink style={{color: 'inherit', textDecoration: 'inherit'}} className="nav-Link p-2" to="/contact">Contact</NavLink>
+              <NavLink style={navStyle} className="nav-Link p-2" to="/">Home</NavLink>
+              <NavLink style={navStyle} className="nav-Link p-2" to="/about">About</NavLink>
+              <NavLink style={navStyle} className="nav-Link p-2" to="/contact">Contact</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Navbar>
 
-        <Route path="/portfolio" exact render={() => 
-          <HomePage 
-            title={this.state.home.title}
-            subTitle={this.state.home.subTitle}
-            text={this.state.home.text}
-          />} />
         <Route path="/" exact render={() => 
           <HomePage 
             title={this.state.home.title}
