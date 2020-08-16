@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ekceer from '../img/ekceer.png'
+
 import profile from '../img/profile.png'
 import quench from '../img/quench.png'
 import Card from './Card'
@@ -13,14 +13,6 @@ class Carousel extends Component {
             items: [
                 {
                     id: 0,
-                    title: 'Ekceer',
-                    subTitle: 'A beauty and clinic app',
-                    imgSrc: ekceer,
-                    link: "https://tahseens.azurewebsites.net",
-                    selected: false
-                },
-                {
-                    id: 1,
                     title: 'Github',
                     subTitle: 'Small projects on github',
                     imgSrc: profile,
@@ -28,7 +20,7 @@ class Carousel extends Component {
                     selected: false
                 },
                 {
-                    id: 2,
+                    id: 1,
                     title: 'Quench',
                     subTitle: 'Non-profit affordable water project',
                     imgSrc: quench,
